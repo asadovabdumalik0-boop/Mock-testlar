@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matematika Test Platformasi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Matematika Test Platformasi</h1>
+            <div id="currentTime" class="time-display"></div>
+        </header>
+
+        <main class="main-content">
+            <div id="auth-screen" class="screen active">
+                <h2>Foydalanuvchi Kirish</h2>
+                <form id="login-form">
+                    <input type="text" id="username" placeholder="Foydalanuvchi nomi" required>
+                    <input type="password" id="password" placeholder="Parol" required>
+                    <button type="submit" class="btn">Kirish</button>
+                </form>
+                <p>Hisobingiz yo'qmi? <a href="#" id="show-register">Ro'yxatdan o'tish</a></p>
+            </div>
+
+            <div id="register-screen" class="screen">
+                <h2>Ro'yxatdan O'tish</h2>
+                <form id="register-form">
+                    <input type="text" id="reg-username" placeholder="Foydalanuvchi nomi" required>
+                    <input type="email" id="reg-email" placeholder="Elektron pochta" required>
+                    <input type="password" id="reg-password" placeholder="Parol" required>
+                    <input type="password" id="reg-confirm-password" placeholder="Parolni tasdiqlang" required>
+                    <button type="submit" class="btn">Ro'yxatdan O'tish</button>
+                </form>
+                <p>Allaqachon hisobingiz bormi? <a href="#" id="show-login">Kirish</a></p>
+            </div>
+
+            <div id="start-screen" class="screen">
+                <h2>Matematika Testiga Xush Kelibsiz</h2>
+                <p>Ushbu test 10 ta multiple-choice savoldan iborat bo'lib, Algebra, Trigonometriya va Stereometriya mavzularini o'z ichiga oladi.</p>
+                <p>Sizga har bir savol uchun 2.5 daqiqa vaqt beriladi. Umumiy vaqt: 25 daqiqa.</p>
+                <button id="start-btn" class="btn">Testni Boshlash</button>
+            </div>
+
+            <div id="test-screen" class="screen">
+                <div class="test-header">
+                    <div class="timer">Qolgan vaqt: <span id="time-left">25:00</span></div>
+                    <div class="question-counter">Savol <span id="current-question">1</span> / 10</div>
+                </div>
+                
+                <div id="question-container" class="question-container">
+                    <!-- Savollar bu yerda chiqadi -->
+                </div>
+                
+                <div class="navigation">
+                    <button id="prev-btn" class="btn prev-btn">Oldingi</button>
+                    <button id="next-btn" class="btn next-btn">Keyingi</button>
+                    <button id="submit-btn" class="btn submit-btn">Testni Yakunlash</button>
+                </div>
+            </div>
+
+            <div id="results-screen" class="screen">
+                <h2>Test Natijalari</h2>
+                <div class="results-summary">
+                    <p>Sizning ballingiz: <span id="score">0</span>/10</p>
+                    <p>Foiz: <span id="percentage">0</span>%</p>
+                    <p>Sarflangan vaqt: <span id="time-taken">0</span> soniya</p>
+                </div>
+                
+                <h3>Boshqa Foydalanuvchilar Bilan Solishtirish</h3>
+                <div class="comparison-chart">
+                    <div class="chart-bar">
+                        <div class="bar-fill" style="width: 75%"></div>
+                        <span>Sizning natijangiz</span>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="bar-fill" style="width: 65%"></div>
+                        <span>O'rtacha talaba</span>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="bar-fill" style="width: 90%"></div>
+                        <span>Yuqori natijali talaba</span>
+                    </div>
+                </div>
+                
+                <button id="restart-btn" class="btn">Yana Test O'tkazish</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
